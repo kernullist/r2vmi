@@ -48,7 +48,7 @@ static bool __plugin_open(RIO *io, const char *pathname, bool many) {
 }
 
 static RIODesc *__open(RIO *io, const char *pathname, int flags, int mode) {
-    printf("%s\n", __func__);
+    printf("%s, flags %d\n", __func__, flags);
     RIODesc *ret = NULL;
     RIOVmi *rio_vmi = NULL;
     const char *delimiter = ":";
