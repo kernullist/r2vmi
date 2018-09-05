@@ -59,6 +59,11 @@ static RIODesc *__open(RIO *io, const char *pathname, int flags, int mode) {
     if (!__plugin_open(io, pathname, 0))
         return ret;
 
+    if (flags & R_IO_WRITE)
+        printf("write enabled\n");
+    else
+        printf("write disabled\n");
+
     // allocate RIOVmi
     rio_vmi = R_NEW0(RIOVmi);
     if (!rio_vmi)
